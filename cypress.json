@@ -1,0 +1,7 @@
+{
+    "baseURL":"http://practice.cybertekschool.com/radio_buttons",
+    "defaultCommandTimeout":4000,
+    "pageLoadTimeout":4000,
+    "watchForFileChanges":false,
+    "chromeWebSecurity":false
+}
