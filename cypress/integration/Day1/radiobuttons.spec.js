@@ -21,8 +21,6 @@ describe('radio button test', () => {
         })
 
 
-
-
     })
 
 

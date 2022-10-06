@@ -1,5 +1,5 @@
 {
-    "baseURL":"http://practice.cybertekschool.com/radio_buttons",
+    "baseURL":"https://cypress.io",
     "defaultCommandTimeout":4000,
     "pageLoadTimeout":4000,
     "watchForFileChanges":false,

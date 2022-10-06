@@ -17,11 +17,6 @@ it('checkbox testing',() => {
 
 
 
-
-
-
-
-
 })
 
 
