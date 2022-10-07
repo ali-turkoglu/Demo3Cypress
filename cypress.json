@@ -1,7 +1,13 @@
 {
-    "baseURL":"https://cypress.io",
+    "baseUrl":"https://wikipedia.org",
     "defaultCommandTimeout":4000,
     "pageLoadTimeout":4000,
     "watchForFileChanges":false,
-    "chromeWebSecurity":false
+    "chromeWebSecurity":false,
+
+    "env":{
+        "username":"",
+        "password":""
+
+    }
 }
