@@ -13,6 +13,7 @@
 // Cypress.Commands.add('login', (email, password) => { ... })
 //
 //
+import { url,username,password,wrongusername,wrongpassword,loginpageerrormessage} from '../support/authentication.constant';
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
 //
@@ -23,3 +24,41 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import 'cypress-file-upload';
+
+Cypress.Commands.add('login_positive_scenarios', () => { 
+
+    cy.visit(url)
+    cy.get('#email').clear().type(username)
+    cy.get('#pass').clear().type(password)
+    cy.get('[name="login"]').click()
+
+ })
+
+ Cypress.Commands.add('Negative_Password_Testing', () => { 
+
+    cy.visit(url)
+    cy.get('#email').clear().type(username)
+    cy.get('#pass').clear().type(wrongpassword)
+    cy.get('[data-testid="royal_login_button"]').click()
+    cy.get('.uiHeaderTitle').should('be.visible')
+
+ })
+ Cypress.Commands.add('Negative_Username_Testing', () => { 
+
+    cy.visit(url)
+    cy.get('#email').clear().type(wrongusername)
+    cy.get('#pass').clear().type(password)
+    cy.get('[data-testid="royal_login_button"]').click()
+    cy.get('.uiHeaderTitle').should('be.visible')
+
+ })
+ Cypress.Commands.add('Negative_Username_Password_Testing', () => { 
+
+    cy.visit(url)
+    cy.get('#email').clear().type(wrongusername)
+    cy.get('#pass').clear().type(wrongpassword)
+    cy.get('[data-testid="royal_login_button"]').click()
+    cy.get('.uiHeaderTitle').should('be.visible')
+
+ })
