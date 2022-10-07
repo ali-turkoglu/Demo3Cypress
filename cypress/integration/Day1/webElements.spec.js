@@ -27,7 +27,8 @@ cy.get('input #radio1')
 //by two different attributes or more (without coma between attributes)
 cy.get('[name="abuse"][class="iCheck-helper"][type="radio"]')
 
-
+//contains of text values
+cy.contains('Blue').click()
 
 
 

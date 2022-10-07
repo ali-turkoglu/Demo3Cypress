@@ -30,12 +30,21 @@ cy.get(loc).last();
 cy.get(loc).eq(1).click();
 
 
-// go back
-cy.get('tbody tr').nextAll.click({multible:true});//10 element --> go by one by and click with click's parantesis {multible:true}
+cy.get(loc).next().click()
+//if you do not use the multiple true it will throw an exception
 cy.go('back');
+cy.get('tbody tr').nextAll.click({multible:true});//10 element --> go by one by and click with click's parantesis {multible:true}
+
 
 cy.get(loc).prev.click();
 cy.get(loc).prevAll.click({multible:true});
+
+
+//position handling
+//https://the-internet.herokuapp.com/login
+cy.get(loc).click('top')
+cy.get(loc).click('buttom')
+cy.get(loc).click('topLeft')
 
 
 //hover handling
@@ -45,6 +54,8 @@ cy.get(loc).trigger('mouseup').click()
 
 //clear and type
 cy.get('#username').clear().type('username')
+
+
 
 
 
