@@ -31,8 +31,8 @@ Cypress.Commands.add('login_positive_scenarios', () => {
     cy.visit(url)
     cy.get('#email').clear().type(username)
     cy.get('#pass').clear().type(password)
-    cy.get('[name="login"]').click()
-
+    cy.get('[data-testid="royal_login_button"]').click()
+    cy.get('.uiHeaderTitle').should('be.visible')
  })
 
  Cypress.Commands.add('Negative_Password_Testing', () => { 

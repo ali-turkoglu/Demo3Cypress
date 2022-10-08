@@ -1,6 +1,6 @@
 {
     "baseUrl":"https://wikipedia.org",
-    "defaultCommandTimeout":4000,
+    "defaultCommandTimeout":6000,
     "pageLoadTimeout":4000,
     "watchForFileChanges":false,
     "chromeWebSecurity":false,
