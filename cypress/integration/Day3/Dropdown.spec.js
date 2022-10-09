@@ -20,19 +20,14 @@ describe('Dropdown Testing', () => {
     })
 
 
-//year selection will handle
-    // it.only('date Selection', () => {
+//year selection 
+    it.only('date Selection', () => {
 
-    //     cy.visit('https://practice.cydeo.com/dropdown')
+        cy.visit('https://practice.cydeo.com/dropdown')
 
-    //     cy.get('#year > option').each((element, index) => {
-
-    //         //expect('2010').to.contain('2010')
-    //         cy.get('#year').select(element.....contain('2010')).should('be.visible')
-
-    //     })
-
-    // })
+        cy.get('#year').select('2010').should('be.visible')
+                                    
+    })
 
 
 

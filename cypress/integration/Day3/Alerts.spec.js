@@ -57,29 +57,16 @@ describe('JavaScript Alerts Testing', () => {
 
     })
 
-    it.only('Handling JS Prompt - Input text in prompt, click OK and validate the input text', () => {
+    it('Handling JS Prompt - Input text in prompt, click OK and validate the input text', () => {
 
         cy.visit('https://practice.cydeo.com/javascript_alerts')
 
-        cy.get('[onclick="jsPrompt()"]').click()
-
-
-        cy.window().then(($window) => {
-            cy.stub($window, 'prompt').returnValues('This is a test text')
-            cy.get('[onclick="jsPrompt()"]').click
+        cy.window().then(($win) => {
+            cy.stub($win, 'prompt').returns('This is a test text')
+            cy.get('[onclick="jsPrompt()"]').click()
         })
 
-
-        //  //to confirm message of popup menu
-        //         cy.on('window:confirm', (str) => {
-        //             expect(str).to.equal('I am a JS Confirm')
-        //         })
-
-        //         //to click Cancel button on popup menu
-        //         cy.on('window:confirm', () => false)
-
-        //         //assertion after closing popup menu 
-        //         cy.get('#result').should('have.text','You clicked: Cancel')
+        cy.get('#result').should('have.text', 'You entered: This is a test text')
 
     })
 
